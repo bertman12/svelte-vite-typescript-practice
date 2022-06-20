@@ -1,12 +1,12 @@
 <script lang="ts">
+    import { createEventDispatcher, onMount } from 'svelte';
+    //Props
+    export let magicNumber: number = 5;
     interface User{
         name: string, 
         occupation: string,
         age: string
     }
-	import { createEventDispatcher, onMount } from 'svelte';
-
-    export let magicNumber: number = 5;
     
 	const dispatch = createEventDispatcher();
 
@@ -53,7 +53,6 @@
     
 </script>
 
-
 <main>
     <button on:click={clickYes}> YES </button>
     <button on:click={clickNo}> NO </button>
@@ -74,10 +73,7 @@
         <hr> 
     {/each}
     
-    <!-- <h1>Value is: {userInput}</h1> -->
 </main>
-
-
 
 <style>
 

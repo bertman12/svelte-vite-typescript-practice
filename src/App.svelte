@@ -2,12 +2,14 @@
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
   import UserList from './lib/UserList.svelte'
-  import TailwindCss from './TailwindCSS.svelte';
+  import Features from './lib/Features.svelte';
+  import './app.css';
 
   function handleYes(data){
     console.log('User clicked YES!');
     console.log(data.detail);
   }
+
   function handleNo(){
     console.log('User clicked NO!');
   }
@@ -15,7 +17,7 @@
 </script>
 
 <main>
-  <TailwindCss />
+  <Features></Features>
 
   <img src={logo} alt="Svelte Logo" />
   <h1>Hello Typescript!</h1>
@@ -32,7 +34,7 @@
     the officially supported framework, also powered by Vite!
   </p>
 
-  <UserList on:yes  ={handleYes} on:no={handleNo} magicNumber={10}></UserList>
+  <UserList on:yes={handleYes} on:no={handleNo} magicNumber={10}></UserList>
 
 </main>
 
