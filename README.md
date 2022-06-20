@@ -1,4 +1,7 @@
-# Svelte + TS + Vite
+# Start here to include TailwindCSS along with Svelte, Typescript, and Vite
+https://www.section.io/engineering-education/svelte-with-vite-typescript-and-tailwind-css/
+
+## Svelte + TS + Vite
 
 This template should help get you started developing with Svelte and TypeScript in Vite.
 
