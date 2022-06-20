@@ -2,6 +2,7 @@
   import logo from './assets/svelte.png'
   import Counter from './lib/Counter.svelte'
   import UserList from './lib/UserList.svelte'
+  import TailwindCss from './TailwindCSS.svelte';
 
   function handleYes(data){
     console.log('User clicked YES!');
@@ -14,6 +15,8 @@
 </script>
 
 <main>
+  <TailwindCss />
+
   <img src={logo} alt="Svelte Logo" />
   <h1>Hello Typescript!</h1>
 

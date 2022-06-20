@@ -64,7 +64,7 @@
     <input type="radio" bind:group={selection} value="blue" bind:this={radio}>
     <input type="radio" bind:group={selection} value="red">
 
-    <h1>Magic Number: {magicNumber}</h1>
+    <h1 class="bg-red-500">Magic Number: {magicNumber}</h1>
     
     {#each list as user}
         <hr>
