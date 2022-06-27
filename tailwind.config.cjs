@@ -1,33 +1,24 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui from 'daisyui'
+///<reference path="daisyui"/> 
 module.exports = {
-  plugins: [],
+  plugins: [daisyui],
   theme: {
   extend: {},
   },
   content: ["./index.html",'./src/**/*.{svelte,js,ts}'],
   variants: {
     extend: {},
-  }
+  },
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "retro",
+  },
 }
 
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
-
-// export default {
-//   plugins: [],
-//     theme: {
-//     extend: {},
-//   },
-//   purge: ["./index.html",'./src/**/*.{svelte,js,ts}'], // for unused CSS
-//   variants: {
-//     extend: {},
-//   },
-//   darkMode: false, // or 'media' or 'class'
-// }

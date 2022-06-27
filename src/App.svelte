@@ -3,7 +3,16 @@
   import Counter from './lib/Counter.svelte'
   import UserList from './lib/UserList.svelte'
   import Features from './lib/Features.svelte';
+  import MaxValue from './lib/MaxValue.svelte';
   import './app.css';
+  import {tweened} from 'svelte/motion';
+  import { cubicOut} from 'svelte/easing';
+
+
+  const progress = tweened(0, {
+		duration: 400,
+		easing: cubicOut
+	});
 
   function handleYes(data){
     console.log('User clicked YES!');
@@ -17,6 +26,15 @@
 </script>
 
 <main>
+  <progress value={$progress}></progress>
+  <!-- <button on:click={() => $progress.set(1)} ></button> -->
+  <button class="btn btn-success" on:click="{() => progress.set(1)}">
+    100%
+  </button>
+
+  <MaxValue></MaxValue>
+
+  <br>
   <Features></Features>
 
   <img src={logo} alt="Svelte Logo" />

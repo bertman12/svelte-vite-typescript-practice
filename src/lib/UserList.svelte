@@ -1,5 +1,9 @@
 <script lang="ts">
     import { createEventDispatcher, onMount } from 'svelte';
+    import Home from './Home.svelte';
+    import {adminNames} from './MainStore.js';
+    let items:any = [];
+    adminNames.subscribe(data => items.push(data));
     //Props
     export let magicNumber: number = 5;
     interface User{
@@ -49,11 +53,17 @@
     
     let selection = 'user-choice';
     let radio: HTMLInputElement;
-
     
 </script>
 
 <main>
+    <!-- {#if true === false} -->
+        
+    {#each items as item }
+        <p>{JSON.stringify(item)}</p>
+    {/each}
+    <p>Store Ref: {JSON.stringify($adminNames)}</p>
+
     <button on:click={clickYes}> YES </button>
     <button on:click={clickNo}> NO </button>
     <button style="background-color: red ; border: 5px dashed; font-weight:100; padding: 10px; margin: 5px;" on:click={onClear}> Clear </button>
@@ -72,7 +82,17 @@
         <li>{user.occupation}</li>       
         <hr> 
     {/each}
-    
+
+    {#each list as user }
+        <p>{user}</p>
+    {/each}
+    <button class="btn">TESTING</button>
+    <button class="btn">TESTING</button>
+    <button class="btn">TESTING</button>
+    <!-- {:else} -->
+
+    <!-- <Home></Home> -->
+    <!-- {/if} -->
 </main>
 
 <style>
